@@ -133,6 +133,9 @@
     function generateRemoveADCssText(cssSeletorArr){
         cssSeletorArr.forEach((seletor,index)=>{
             cssSeletorArr[index]=`${seletor}{display:none!important}`;//遍历并设置样式.
+            if(seletor=='ytd-ad-slot-renderer'){
+                cssSeletorArr[index]='ytd-rich-item-renderer:has(ytd-ad-slot-renderer){display:none!important}}'
+            }
         });
         return cssSeletorArr.join(` `);//拼接成字符串.
     }
